@@ -1,1 +1,4 @@
-alert(1);
+let hi = () => {
+  console.log('Привет');
+  alert('Пока');
+};
