@@ -1,0 +1,28 @@
+body {
+    background: url('./ocean.jpg')
+}
+
+.logo {
+    margin-top: .5rem;
+    height: 35px;
+    float: left;
+}
+
+.header {
+    padding: 1rem;
+    background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+    background-blend-mode: multiply;
+    color: #fff9ff;
+}
+
+.cName {
+    margin-left: 5rem;
+}
+
+.card_container {
+    width: 100%;
+}
+
+.card {
+    width: 15rem;
+}
