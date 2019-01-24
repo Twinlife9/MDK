@@ -35,7 +35,21 @@
   type int
   every a[] % 2 a[]**i
   else i**a[] 
-  */
+    
+
+  Old way using nested loop
+  
+  for (let x = 0; x < b.length; x++) {
+    for (let y = 0; y < b[x].length; y++) {
+      if (x == y) {
+        main_sum += b[x][y];
+      }
+      if (b.length - 1 - x ==  y) {
+        sub_sum += b[x][y]
+      }
+    }
+  }
+*/
 
 let a = [1, 2, 3, 4, 5, 6, 7]
 
@@ -57,15 +71,10 @@ let b = [
 ];
 let main_sum = 0;
 let sub_sum = 0;
-for (let x = 0; x < b.length; x++) {
-  for (let y = 0; y < b[x].length; y++) {
-    if (x == y) {
-      main_sum += b[x][y];
-    }
-    if (b.length - 1 - x ==  y) {
-      sub_sum += b[x][y]
-    }
-  }
+for(let i = 0; i < b.length; i++){
+  main_sum += b[i][i];
+  let invertedI = ((b.length -1 ) - x);
+  sub_sum += b[invertedI][I];
 }
 
 console.log(main_sum, sub_sum);
