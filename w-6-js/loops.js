@@ -41,3 +41,47 @@ for (let i = start; i < end; i++) {
 }
 
 console.log(summ);
+
+
+// //prime number test
+
+// let result = true;
+// let n = 89;
+
+// if (n <= 3) {
+//   result = n > 1;
+// } else if ((n % 2) == 0 || (n % 3) == 0) {
+//   result = false;
+// }
+
+// let i = 5;
+// while (i * i <= n) {
+//   if ((n % i) == 0 || (n % (i + 2)) == 0) {
+//     result = false;
+//   }
+//   i += 6;
+//}
+
+
+
+
+let result = true;
+let n = 113;
+
+if (n < 1) {
+  
+  console.log('Wrong');
+
+} else {
+
+  for (let i = 1; i <= n; i++) {
+    if (i != 1 && i != n) {
+      if (n % i == 0) {
+        result = false;
+        break;
+      }
+    }
+  }
+
+  console.log(`${n} prime? \n ${result}`);
+}
