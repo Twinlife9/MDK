@@ -68,4 +68,5 @@ for (let x = 0; x < b.length; x++) {
   }
 }
 
+
 console.log(main_sum, sub_sum);
