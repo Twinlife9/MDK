@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+const request = require('request');
 const default_template = path.join(__dirname, 'builder/index.html');
-
+const UNSPLASH_API = "https://source.unsplash.com/collection/540518/1920x1080";
 
 let WriteIndex = () => {
   let written = fs.writeFileSync('./index.html', template_code);
@@ -31,6 +32,11 @@ let InsertLinks = (links) => {
   template_code = template_code.replace('#INSERT#', links);
   console.log(`Inserted ${links.length} bytes into template...`);
 
+}
+
+let InsertBgi = (bgi_url) => {
+  template_code = template_code.replace('#IMG#', bgi_url);
+  console.log(`Added Background Image...`);
 }
 
 let createTaskLink = (href, name, date_mod) => {
@@ -72,9 +78,25 @@ let doBuild = (obj, template) => {
   let lis = createLis(obj);
   InsertTitle('Absolute Flex...');
   InsertLinks(lis);
-  WriteIndex()
-  console.log('🎉 Done! Handing of control to lite-server...\n\n');
 
+  //Optimized bgi loading...
+  //Old one was slow as fuck 
+  //arround 800ms ttfb, when
+  //loading actual content was ~ 19ms
+
+  request(UNSPLASH_API, {
+    method: 'HEAD',
+    followRedirect: false
+  }, function (err, res, body) {
+    if (err) {
+      throw err;
+    }
+    if (res.headers.location) {
+      InsertBgi(res.headers.location);
+      WriteIndex();
+      console.log('🎉\t Done! Handing of control to lite-server...\n\n');
+    }
+  });
 }
 
 module.exports = {
