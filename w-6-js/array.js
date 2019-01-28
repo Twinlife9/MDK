@@ -33,14 +33,58 @@ let matrix = [
 let main_sum = 0;
 let minor_sum = 0;
 
-for(let i = 0; i < (matrix[0].length > matrix.length ? matrix[0].length : matrix.length); i++){
+for (let i = 0; i < (matrix[0].length > matrix.length ? matrix[0].length : matrix.length); i++) {
   //main diagonal
   main_sum += matrix[i][i];
 
   //Invering index for minor(counter) diagonal
   //  and adding up
-  let invertedI = ((matrix.length -1 ) - i);
+  let invertedI = ((matrix.length - 1) - i);
   minor_sum += matrix[invertedI][i];
 }
 
 console.log(main_sum, minor_sum);
+let up_trig = [
+  [1, 1, 2, 3, 1],
+  [0, 1, 2, 3, 1],
+  [0, 0, 1, 4, 6],
+  [0, 1, 0, 4, 6],
+  [0, 0, 0, 0, 6]
+];
+
+let bot_trig = [
+  [1, 0, 0, 0, 0],
+  [2, 1, 0, 0, 0],
+  [2, 3, 1, 0, 0],
+  [1, 3, 1, 4, 0],
+  [2, 3, 1, 4, 6]
+];
+
+let diag = [
+  [1, 0, 0, 0, 0],
+  [0, 1, 0, 0, 0],
+  [0, 0, 1, 0, 0],
+  [0, 0, 0, 4, 0],
+  [0, 0, 0, 0, 6]
+];
+
+let cMatrix = up_trig;
+let isUpper = true
+let isBot = true;
+let isDiag = true;
+
+for (let i = 1; i < cMatrix.length - 1; i++) {
+  if (!(cMatrix[i - 1][i] == 0 && cMatrix[i + 1][i] != 0 )) {
+    isBot = false;
+  }
+  if(!(cMatrix[i+1][i] == 0 && cMatrix[i-1][i] != 0))
+  {
+    isUpper = false
+  }
+  if(!(cMatrix[i+1][i] == 0 && cMatrix[i-1][i] == 0)){
+    isDiag = false;
+  }
+  
+}
+
+console.log(`Is upper ${isUpper}, Is bottom ${isBot}, Is diag ${isDiag}`);
