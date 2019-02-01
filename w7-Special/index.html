@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .mv {
+      position: absolute;
+      background-color: red;
+      border: 1px solid black;
+      padding: 9px;
+      border-radius: 10rem;
+      color: white;
+      width: 75px;
+      text-align: center;
+    }
+
+    .mc {
+      position: absolute;
+      background-color: purple;
+      border: 1px solid black;
+      padding: 9px;
+      border-radius: 10rem;
+      color: white;
+      width: 75px;
+      text-align: center;
+    }
+
+    .mg {
+      position: absolute;
+      background-color: gold;
+      border: 1px solid black;
+      padding: 9px;
+      border-radius: 10rem;
+      color: white;
+      width: 75px;
+      text-align: center;
+    }
+
+
+    .trash {
+      position: absolute;
+      background-color: rgba(255, 0, 0, 0.3);
+      height: 100vh;
+      width: 30vw;
+      right: 0;
+      top: 0;
+    }
+
+    body {
+      margin-left: 40vw;
+    }
+
+    .wrapper {
+
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-gap: 10px;
+      background-color: #fff;
+      color: #444;
+    }
+
+    .box {
+      background-color: #444;
+      color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 150%;
+      width: 60px;
+      margin-bottom: 1rem;
+    }
+    .firstb{
+      background-color: gold;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="firstb">
+    <div class="box a firstb" onmousedown="DoDrag(this);">A</div>
+    <div class="box d" onmousedown="DoDrag(this);">D</div>
+    <div class="box e" onmousedown="DoDrag(this);">E</div>
+    <div class="box f" onmousedown="DoDrag(this);">F</div>
+    </div>
+    <div >
+    <div class="box b" onmousedown="DoDrag(this);">B</div>
+    <div class="box c" onmousedown="DoDrag(this);">C</div>
+    <div class="box a" onmousedown="DoDrag(this);">A</div>
+    <div class="box d" onmousedown="DoDrag(this);">D</div>
+    </div>
+     <div>
+    <div class="box e" onmousedown="DoDrag(this);">E</div>
+    <div class="box f" onmousedown="DoDrag(this);">F</div>
+    <div class="box a" onmousedown="DoDrag(this);">A</div>
+    <div class="box d" onmousedown="DoDrag(this);">D</div>
+    </div>
+     
+  </div>
+  
+  <div class="trash">
+    
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+
+</html>
