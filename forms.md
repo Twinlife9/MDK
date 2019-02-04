@@ -39,5 +39,13 @@
     
     $_GET["name"]   //http://domain.com/go.php?text1=3&text2=1312
     ```
-
-# TODO
+  * value = ""
+  * placeholder = ""
+  * required - обязательное поле
+  * disabled
+  *  ```<label for ="t1">text</label>```
+  *  ```<textarea name = "11" cols="100" rows="30"></textarea>```
+  *  ```<select name = "s1" myltiple ><option value="p1"></select>```
+     ```<input type="checkbox"name="s"value="">```
+     ```<input type="radio"name="s"value="" cheaked>```
+# TODO1

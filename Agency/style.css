@@ -1,0 +1,34 @@
+:root {
+  --main-blue: #1847B2;
+}
+
+.bg-primary {
+  background-color: var(--main-blue) !important;
+}
+
+.logo {
+  width: 3vmin;
+  height: auto;
+}
+
+.btr {
+  border: 2px solid white;
+  border-radius: 10rem;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s;
+}
+
+.btr:hover {
+  border-radius: 10rem;
+  padding: 10px;
+  color: var(--main-blue);
+  text-decoration: none;
+  background-color: #fff;
+
+}
+
+.bgimg{
+  background-image: url('https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&h=1080&q=50');
+}
