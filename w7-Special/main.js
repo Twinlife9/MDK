@@ -81,12 +81,13 @@ document.addEventListener('mouseup', () => {
   }
 });
 
+//What was it for????
 let DoDrag = (el) => {
   activeEl = el;
   saveHome(activeEl);
   document.addEventListener('mousemove', followMouse);
 
-};
+ };
 // document.addEventListener('mouseup', ()=>{
 // let el = document.querySelector('.mv');
 // document.removeEventListener('mousemove', followMouse, true);

@@ -88,14 +88,14 @@ let doBuild = (obj, template) => {
     method: 'HEAD',
     followRedirect: false
   }, function (err, res, body) {
-    if (err) {
+    /*if (err) {
       throw err;
     }
     if (res.headers.location) {
-      InsertBgi(res.headers.location);
+      InsertBgi(res.headers.location);*/
       WriteIndex();
       console.log('🎉\t Done! Handing of control to lite-server...\n\n');
-    }
+    
   });
 }
 
